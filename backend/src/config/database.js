@@ -1,7 +1,21 @@
-// Database configuration - force SQLite for now
-console.log('Using SQLite database');
-const sqlite3 = require('sqlite3').verbose();
-const path = require('path');
+// Database configuration - supports multiple database types
+const dbType = process.env.DB_TYPE || 'sqlite';
+console.log(`Using ${dbType} database`);
+
+// Switch between database types based on environment
+switch (dbType) {
+  case 'supabase':
+    module.exports = require('./database-supabase');
+    break;
+  case 'postgres':
+  case 'postgresql':
+    module.exports = require('./database-postgres');
+    break;
+  case 'sqlite':
+  default:
+    // Keep the existing SQLite implementation
+    const sqlite3 = require('sqlite3').verbose();
+    const path = require('path');
 
 const dbPath = path.join(__dirname, '../../database.sqlite');
 
@@ -299,4 +313,6 @@ class SQLitePool {
   }
 }
 
-module.exports = new SQLitePool();
+    module.exports = new SQLitePool();
+    break;
+}
