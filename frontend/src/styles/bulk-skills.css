@@ -1,0 +1,200 @@
+/* Bulk Skills Management Styles */
+
+.bulk-skills-management {
+  padding: 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.header-content h2 {
+  margin: 0 0 8px 0;
+  color: #111827;
+}
+
+.header-content p {
+  margin: 0;
+  color: #6b7280;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.header-actions button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.history-button {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.import-button {
+  background: #3b82f6;
+  color: white;
+}
+
+.export-button {
+  background: #059669;
+  color: white;
+}
+
+.operation-history {
+  margin-bottom: 30px;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+}
+
+.bulk-operation-panel {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 30px;
+  border: 1px solid #e5e7eb;
+}
+
+.selection-panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.selection-panel {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.panel-header h3 {
+  margin: 0;
+  color: #111827;
+}
+
+.consultant-item,
+.skill-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.consultant-item:hover,
+.skill-item:hover {
+  background: #f9fafb;
+}
+
+.consultant-item.selected,
+.skill-item.selected {
+  background: #ecfdf5;
+  border-color: #10b981;
+}
+
+.selection-indicator {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #10b981;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.import-modal {
+  max-width: 800px;
+  width: 90vw;
+  max-height: 90vh;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  max-height: 60vh;
+}
+
+.import-preview table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+
+.import-preview th,
+.import-preview td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 13px;
+}
+
+.import-preview th {
+  background: #f9fafb;
+  font-weight: 500;
+  color: #374151;
+}
+
+@media (max-width: 1024px) {
+  .selection-panels {
+    grid-template-columns: 1fr;
+  }
+}
